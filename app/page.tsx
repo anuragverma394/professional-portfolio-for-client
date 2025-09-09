@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Menu, X, Calendar, MapPin, Palette, ExternalLink } from "lucide-react"
+import { Menu, X, MapPin } from "lucide-react"
 
 export default function Portfolio() {
   const heroRef = useRef<HTMLElement>(null)
@@ -12,7 +12,6 @@ export default function Portfolio() {
   const isMenuOpen = useRef(false)
 
   useEffect(() => {
-    // GSAP-like animations using CSS and Intersection Observer
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
@@ -26,52 +25,43 @@ export default function Portfolio() {
       })
     }, observerOptions)
 
-    // Observe all sections
     document.querySelectorAll("section").forEach((section) => {
       observer.observe(section)
     })
 
-    const createFloatingParticle = () => {
-      const particle = document.createElement("div")
-      particle.className = "floating-particle"
-      particle.style.cssText = `
-        position: absolute;
-        width: ${Math.random() * 6 + 2}px;
-        height: ${Math.random() * 6 + 2}px;
-        background: rgba(59, 130, 246, ${Math.random() * 0.3 + 0.1});
-        border-radius: 50%;
-        pointer-events: none;
-        left: ${Math.random() * 100}%;
-        top: ${Math.random() * 100}%;
-        animation: float ${Math.random() * 20 + 15}s infinite linear;
-        z-index: 1;
-      `
+    // Floating particles only on md+ screens
+    if (window.innerWidth >= 768) {
+      const createFloatingParticle = () => {
+        const particle = document.createElement("div")
+        particle.className = "floating-particle"
+        particle.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 6 + 2}px;
+          height: ${Math.random() * 6 + 2}px;
+          background: rgba(59, 130, 246, ${Math.random() * 0.3 + 0.1});
+          border-radius: 50%;
+          pointer-events: none;
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          animation: float ${Math.random() * 20 + 15}s infinite linear;
+          z-index: 1;
+        `
 
-      const heroSection = document.getElementById("hero")
-      if (heroSection) {
-        heroSection.appendChild(particle)
+        const heroSection = document.getElementById("hero")
+        if (heroSection) heroSection.appendChild(particle)
 
-        // Remove particle after animation
         setTimeout(() => {
-          if (particle.parentNode) {
-            particle.parentNode.removeChild(particle)
-          }
+          if (particle.parentNode) particle.parentNode.removeChild(particle)
         }, 35000)
       }
+
+      for (let i = 0; i < 15; i++) setTimeout(createFloatingParticle, i * 1000)
+      const particleInterval = setInterval(createFloatingParticle, 2000)
+
+      return () => clearInterval(particleInterval)
     }
 
-    // Create initial particles
-    for (let i = 0; i < 15; i++) {
-      setTimeout(() => createFloatingParticle(), i * 1000)
-    }
-
-    // Continue creating particles
-    const particleInterval = setInterval(createFloatingParticle, 2000)
-
-    return () => {
-      observer.disconnect()
-      clearInterval(particleInterval)
-    }
+    return () => observer.disconnect()
   }, [])
 
   const toggleMenu = () => {
@@ -79,21 +69,15 @@ export default function Portfolio() {
     if (!menu) return
 
     isMenuOpen.current = !isMenuOpen.current
-
-    if (isMenuOpen.current) {
-      menu.classList.remove("translate-x-full")
-      menu.classList.add("translate-x-0")
-    } else {
-      menu.classList.remove("translate-x-0")
-      menu.classList.add("translate-x-full")
-    }
+    menu.classList.toggle("translate-x-full")
+    menu.classList.toggle("translate-x-0")
   }
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
-      toggleMenu() // Close menu after navigation
+      toggleMenu()
     }
   }
 
@@ -101,8 +85,10 @@ export default function Portfolio() {
     <div className="min-h-screen bg-slate-100 text-slate-900">
       {/* Navigation Menu */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-blue/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 hover:bg-blue-50">Artist & Co-Founder of Beyond Boundaries Art Studio</h1>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 flex justify-between items-center">
+          <h1 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-slate-900 hover:bg-blue-50">
+            Artist & Co-Founder of Beyond Boundaries Art Studio
+          </h1>
           <Button variant="ghost" size="icon" onClick={toggleMenu} className="z-50 hover:bg-blend-color-burn-100">
             <Menu className="h-6 w-6 text-slate-700" />
           </Button>
@@ -114,31 +100,19 @@ export default function Portfolio() {
         ref={menuRef}
         className="fixed top-0 right-0 h-full w-full md:w-96 bg-blue-100 border-l border-slate-200 z-40 transform translate-x-full transition-transform duration-500 ease-in-out shadow-2xl"
       >
-        <div className="p-8 pt-20">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleMenu}
-            className="absolute top-4 right-4 hover:bg-slate-100"
-          >
+        <div className="p-8 pt-20 relative h-full">
+          <Button variant="ghost" size="icon" onClick={toggleMenu} className="absolute top-4 right-4 hover:bg-slate-100">
             <X className="h-6 w-6 text-slate-700" />
           </Button>
 
-          <nav className="space-y-6">
-            {[
-              { id: "hero", label: "Home" },
-              { id: "about", label: "About" },
-              { id: "awards", label: "Awards" },
-              { id: "exhibitions", label: "Exhibitions" },
-              { id: "gallery", label: "Gallery" },
-              { id: "contact", label: "Contact" },
-            ].map((item) => (
+          <nav className="space-y-6 mt-12">
+            {["hero", "about", "awards", "exhibitions", "gallery", "contact"].map((id) => (
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block text-2xl font-light hover:text-blue-300 transition-colors duration-300 text-left w-full text-slate-800"
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="block text-xl sm:text-2xl font-light hover:text-blue-300 transition-colors duration-300 text-left w-full text-slate-800"
               >
-                {item.label}
+                {id.charAt(0).toUpperCase() + id.slice(1)}
               </button>
             ))}
           </nav>
@@ -154,40 +128,24 @@ export default function Portfolio() {
         <div className="absolute inset-0 bg-gradient-to-br from-black-50 via-gray to-black-300"></div>
 
         {/* Hero Image */}
-        <div className="absolute right-0 top-0 w-1/2 h-full opacity-35">
+        <div className="absolute right-0 top-0 w-full md:w-1/2 h-full opacity-35">
           <img src="/dp.jpg" alt="Artist silhouette" className="w-full h-full object-cover" />
         </div>
 
-        <div className="absolute inset-0 z-[2]">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-blue-200 rotate-45 animate-spin-slow"></div>
-          <div className="absolute top-3/4 right-1/4 w-24 h-24 border border-slate-200 rotate-12 animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/6 w-16 h-16 bg-blue-300 rounded-full animate-bounce-slow"></div>
-          <div className="absolute bottom-1/4 left-1/2 w-20 h-20 border-2 border-blue-200 rounded-full animate-ping-slow"></div>
-
-          {/* Floating lines */}
-          <div className="absolute top-1/3 right-1/3 w-40 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-slide-right"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-32 h-px bg-gradient-to-l from-transparent via-slate-300 to-transparent animate-slide-left"></div>
-        </div>
-
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-balance leading-tight relative">
-            <span className="relative inline-block text-slate-900">
-              Rajnish
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-200/30 via-transparent to-blue-200/30 animate-shimmer"></div>
-            </span>
-            <span className="block text-slate-600 relative">
-              Verma
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-transparent to-blue-300/40 animate-shimmer-reverse"></div>
-            </span>
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 text-balance leading-tight">
+            Rajnish <span className="block text-slate-600">Verma</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 mb-8 font-light">Sculptor & Fine Artist</p>
-          <p className="text-lg text-slate-700 mb-12 max-w-2xl mx-auto text-pretty">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-6 sm:mb-8">
+            Sculptor & Fine Artist
+          </p>
+          <p className="text-sm sm:text-base md:text-lg text-slate-700 mb-8 sm:mb-12 max-w-2xl mx-auto">
             M.F.A in Sculpture from Jamia Millia Islamia, New Delhi. Award-winning artist with exhibitions across India.
           </p>
           <Button
             size="lg"
             onClick={() => scrollToSection("about")}
-            className="bg-gray-600 hover:bg-blue-700 text-white px-8 py-3 text-lg shadow-lg"
+            className="bg-gray-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg md:text-xl shadow-lg"
           >
             Explore My Work
           </Button>
@@ -195,62 +153,54 @@ export default function Portfolio() {
 
         {/* Marquee Text */}
         <div className="absolute bottom-0 left-0 right-0 overflow-hidden border-t border-slate-200 bg-white/80">
-          <div className="animate-marquee whitespace-nowrap py-4 text-sm text-slate-500">
+          <div className="animate-marquee whitespace-nowrap py-2 sm:py-4 text-xs sm:text-sm md:text-base text-slate-500">
             SCULPTOR • FINE ARTIST • AWARD WINNER • EXHIBITIONS • JAMIA MILLIA ISLAMIA • ALLAHABAD UNIVERSITY •
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-6 bg-black/40">
+      <section id="about" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-black/40">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-balance text-slate-900">About the Artist</h2>
-              <div className="space-y-6 text-lg text-slate-100">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-balance text-slate-900">
+                About the Artist
+              </h2>
+              <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg text-slate-100">
                 <p>
-                  Rajnish Verma is an accomplished sculptor with a Master of Fine Arts degree from the prestigious Jamia
-                  Millia Islamia, New Delhi, and a Bachelor of Fine Arts from Allahabad University.
+                  Rajnish Verma is an accomplished sculptor with a Master of Fine Arts degree from Jamia Millia Islamia, New Delhi, and a Bachelor of Fine Arts from Allahabad University.
                 </p>
                 <p>
-                  His artistic journey spans over a decade, marked by numerous awards and exhibitions across India. His
-                  work explores the intersection of traditional sculptural techniques with contemporary artistic
-                  expression.
+                  His artistic journey spans over a decade, marked by numerous awards and exhibitions across India. His work explores the intersection of traditional sculptural techniques with contemporary artistic expression.
                 </p>
-                <div className="grid grid-cols-2 gap-4 pt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 sm:pt-6">
                   <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">Education</h3>
+                    <h3 className="font-semibold text-slate-900 mb-1">Education</h3>
                     <p className="text-sm">M.F.A in Sculpture</p>
                     <p className="text-sm text-slate-100">Jamia Millia Islamia</p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">Specialization</h3>
+                    <h3 className="font-semibold text-slate-900 mb-1">Specialization</h3>
                     <p className="text-sm">Contemporary Sculpture</p>
                     <p className="text-sm text-slate-100">Mixed Media</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative">
-        <div className="bg-indigo rounded-lg overflow-hidden shadow-xl inline-block">
-  <img
-    src="/rajnishpic2.jpg"
-    alt="Rajnish Verma in his studio"
-    className="w-auto h-auto max-w-full max-h-[695px] object-contain"
-  />
-</div>
-
-
-
-
-              {/* Studio tools image overlay */}
-              <div className="absolute -bottom-6 -right-6 w-50 h-32 bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
+            <div className="relative flex justify-center md:justify-end">
+              <div className="bg-indigo-200 rounded-lg overflow-hidden shadow-xl inline-block w-full max-w-md sm:max-w-lg md:max-w-full">
+                <img src="/rajnishpic2.jpg" alt="Rajnish Verma in his studio" className="w-full h-auto object-contain" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-24 bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200 hidden sm:block">
                 <img src="/india.jpg" alt="Sculpture tools" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+
 <section id="international-awards" className="py-24 px-6 bg-gradient-to-r from-olive-400 via-red to-indigo-200 overflow-hidden">
   <div className="container mx-auto max-w-6xl">
     <div className="text-center mb-16">
