@@ -268,7 +268,7 @@ export default function Portfolio() {
   year: "2025",
   title: "Commemorative Award",
   location: "36th Harbin International Ice Sculpture Competition, China",
-  image: "/awards/harbin-ice2025.png",
+  image: "36thaward.jpg",
   description:
     "Awarded for participation and recognition in the 36th Harbin International Ice Sculpture Competition (2nd Jan – 4th Jan).",
 },
@@ -276,7 +276,7 @@ export default function Portfolio() {
   year: "2025",
   title: "Commemorative Award",
   location: "27th Harbin International Snow Sculpture Competition, China",
-  image: "/awards/harbin-snow2025.png",
+  image: "/27thpic.jpg",
   description:
     "Recognized at the 27th Harbin International Snow Sculpture Competition (6th Jan – 9th Jan).",
 },
@@ -324,7 +324,7 @@ export default function Portfolio() {
           year: "2019",
           title: "Excellence Prize",
           location: "33rd China Harbin International Ice Sculpture Competition, Harbin, China",
-          image: "/awards/harbin-ice2.png",
+          image: "/ice.jpg",
           description:
             "Recognized for exceptional artistry in international ice sculpting.",
         },
@@ -332,7 +332,7 @@ export default function Portfolio() {
           year: "2019",
           title: "Excellence Prize",
           location: "8th China Harbin International Ice-Assemblage Sculpture Championship, Harbin, China",
-          image: "/awards/harbin-assemblage.png",
+          image: "/8thprize.jpg",
           description:
             "Awarded for excellence in collaborative large-scale ice sculpture.",
         },
