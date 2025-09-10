@@ -187,7 +187,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           <h1 className="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-black hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
             <span className="hidden sm:inline">Artist & Co-Founder of Beyond Boundaries Art Studio</span>
-            <span className="sm:hidden">Rajnish Verma</span>
+            {/* <span className="sm:hidden"> RajnishVerma</span> */}
           </h1>
           <Button
             variant="ghost"
