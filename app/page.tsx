@@ -185,7 +185,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-br from-white-100 via-white-300 to-white-100 text-white overflow-x-hidden">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white shadow-2xl transform-gpu">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-          <h1 className="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
+          <h1 className="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-black hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
             <span className="hidden sm:inline">Artist & Co-Founder of Beyond Boundaries Art Studio</span>
             <span className="sm:hidden">Rajnish Verma</span>
           </h1>
@@ -273,7 +273,7 @@ export default function Portfolio() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-white-500 to-white-100"></div>
 
-        <div className="absolute right-0 top-0 w-full sm:w-1/2 h-full opacity-80 sm:opacity-90 transform-gpu">
+        <div className="absolute right-0 top-0 w-full sm:w-1/2 h-full opacity-60 sm:opacity-60 transform-gpu">
           <img
             src="/dp.jpg"
             alt="Artist silhouette"
@@ -282,30 +282,26 @@ export default function Portfolio() {
           />
         </div>
 
-        <div className="absolute inset-0 z-[2] transform-gpu" style={{ transformStyle: "preserve-3d" }}>
-          <div className="absolute top-3/4 right-1/4 w-12 sm:w-24 h-12 sm:h-24 border-2 border-purple-400 rotate-12 animate-pulse-3d shadow-lg shadow-purple-400/30"></div>
-        
-         </div>
+      
 
         <div
           className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 transform-gpu"
-          style={{ transformStyle: "preserve-3d" }}
+          // style={{ transformStyle: "preserve-3d" }}
         >
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 text-balance leading-tight relative transform-gpu">
             <span
-              className="relative inline-block text-white transform hover:scale-110 transition-all duration-500"
-              style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(168, 85, 238, 0.3)" }}
+              className="relative inline-block text-black transform hover:scale-110 transition-all duration-500"
+            //   style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(168, 85, 238, 0.3)" }}
+            // 
             >
               Rajnish
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-400/30 via-transparent to-gray-400/30 animate-shimmer-3d"></div>
             </span>
             <span
               className="block text-black-300 relative transform hover:scale-110 transition-all duration-500"
               style={{ textShadow: "0 0 30px rgba(34, 211, 238, 0.5), 0 0 60px rgba(147, 51, 234, 0.3)" }}
             >
               Verma
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-400/40 via-transparent to-gray-400/40 animate-shimmer-reverse-3d"></div>
-            </span>
+             </span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-black mb-6 sm:mb-8 font-light transform hover:scale-105 transition-all duration-300">
             Sculptor & Fine Artist
