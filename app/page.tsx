@@ -822,7 +822,7 @@ export default function Portfolio() {
                 <img
                   src="/dp.jpg?height=100&width=90"
                   alt="Rajnish Verma"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-cover"
                 />
               </div>
               <div className="text-center sm:text-left">
