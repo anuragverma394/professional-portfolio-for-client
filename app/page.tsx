@@ -60,9 +60,9 @@ export default function Portfolio() {
             }
 
             animationFrameRef.current = requestAnimationFrame(() => {
-              section.style.transform = "scale3d(0.9, 0.9, 1)"
-              section.style.opacity = "0.3"
-              section.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out"
+              section.style.transform = "scale3d(1, 1, 1)"
+              section.style.opacity = "0"
+              section.style.transition = "transform 0.1s ease-out, opacity 0.1  s ease-out"
             })
           }
         } catch (error) {
@@ -182,8 +182,8 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-100 to-purple-100 text-white overflow-x-hidden">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-2xl transform-gpu">
+    <div className="min-h-screen bg-gradient-to-br from-white-100 via-white-300 to-white-100 text-white overflow-x-hidden">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white shadow-2xl transform-gpu">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           <h1 className="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
             <span className="hidden sm:inline">Artist & Co-Founder of Beyond Boundaries Art Studio</span>
@@ -268,12 +268,12 @@ export default function Portfolio() {
         className="min-h-screen flex items-center justify-center relative overflow-hidden transform-gpu"
         style={{
           transformStyle: "preserve-3d",
-          background: "linear-gradient(135deg, #0f0f23 110%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #7c3aed 100%)",
+          background: "white"
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-white-500 to-white-100"></div>
 
-        <div className="absolute right-0 top-0 w-full sm:w-1/2 h-full opacity-20 sm:opacity-55 transform-gpu">
+        <div className="absolute right-0 top-0 w-full sm:w-1/2 h-full opacity-80 sm:opacity-90 transform-gpu">
           <img
             src="/dp.jpg"
             alt="Artist silhouette"
@@ -283,14 +283,9 @@ export default function Portfolio() {
         </div>
 
         <div className="absolute inset-0 z-[2] transform-gpu" style={{ transformStyle: "preserve-3d" }}>
-          <div className="absolute top-1/4 left-1/4 w-16 sm:w-32 h-16 sm:h-32 border-2 border-cyan-400 rotate-45 animate-spin-3d shadow-lg shadow-cyan-400/30"></div>
           <div className="absolute top-3/4 right-1/4 w-12 sm:w-24 h-12 sm:h-24 border-2 border-purple-400 rotate-12 animate-pulse-3d shadow-lg shadow-purple-400/30"></div>
-          <div className="absolute top-1/2 left-1/6 w-8 sm:w-16 h-8 sm:h-16 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full animate-bounce-3d shadow-2xl"></div>
-          <div className="absolute bottom-1/4 left-1/2 w-10 sm:w-20 h-10 sm:h-20 border-2 border-pink-400 rounded-full animate-ping-3d shadow-lg shadow-pink-400/30"></div>
-
-          <div className="absolute top-1/3 right-1/3 w-20 sm:w-40 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-slide-right-3d shadow-lg"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-16 sm:w-32 h-1 bg-gradient-to-l from-transparent via-purple-400 to-transparent animate-slide-left-3d shadow-lg"></div>
-        </div>
+        
+         </div>
 
         <div
           className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 transform-gpu"
@@ -302,20 +297,20 @@ export default function Portfolio() {
               style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(168, 85, 238, 0.3)" }}
             >
               Rajnish
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 via-transparent to-cyan-400/30 animate-shimmer-3d"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-400/30 via-transparent to-gray-400/30 animate-shimmer-3d"></div>
             </span>
             <span
-              className="block text-cyan-300 relative transform hover:scale-110 transition-all duration-500"
+              className="block text-black-300 relative transform hover:scale-110 transition-all duration-500"
               style={{ textShadow: "0 0 30px rgba(34, 211, 238, 0.5), 0 0 60px rgba(147, 51, 234, 0.3)" }}
             >
               Verma
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/40 via-transparent to-purple-400/40 animate-shimmer-reverse-3d"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-400/40 via-transparent to-gray-400/40 animate-shimmer-reverse-3d"></div>
             </span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-cyan-200 mb-6 sm:mb-8 font-light transform hover:scale-105 transition-all duration-300">
+          <p className="text-lg sm:text-xl md:text-2xl text-black mb-6 sm:mb-8 font-light transform hover:scale-105 transition-all duration-300">
             Sculptor & Fine Artist
           </p>
-          <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto text-pretty transform hover:scale-105 transition-all duration-300">
+          <p className="text-base sm:text-lg text-slate-500 mb-8 sm:mb-12 max-w-2xl mx-auto text-pretty transform hover:scale-105 transition-all duration-300">
             M.F.A in Sculpture from Jamia Millia Islamia, New Delhi. Award-winning artist with exhibitions across India.
           </p>
           <Button
@@ -329,7 +324,7 @@ export default function Portfolio() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 overflow-hidden border-t border-white/20 bg-black/20 backdrop-blur-xl">
-          <div className="animate-3d whitespace-nowrap py-3 sm:py-4 text-xs sm:text-sm text-cyan-300">
+          <div className="animate-3d whitespace-nowrap py-3 sm:py-4 text-xs sm:text-sm text-black text-center">
             <span className="hidden sm:inline">
               SCULPTOR • FINE ARTIST • AWARD WINNER • EXHIBITIONS • JAMIA MILLIA ISLAMIA • ALLAHABAD UNIVERSITY •
             </span>
@@ -340,7 +335,7 @@ export default function Portfolio() {
 
       <section
         id="about"
-        className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-slate-100 via-gray-100 to-gray-500 transform-gpu"
+        className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-slate-100 via-gray-100 to-white-500 transform-gpu"
         style={{ transformStyle: "preserve-3d" }}
       >
         <div className="container mx-auto max-w-6xl">
@@ -366,7 +361,7 @@ export default function Portfolio() {
                   <div className="transform hover:scale-90 hover:rotate-1  p-4 bg-white/5 rounded-lg ">
                     <h3 className="font-semibold text-black-300 mb-2">Education</h3>
                     <p className="text-sm">M.F.A in Sculpture</p>
-                    <p className="text-sm text-white/100">Jamia Millia Islamia</p>
+                    <p className="text-sm text-black">Jamia Millia Islamia</p>
                   </div>
                   <div className="transform hover:scale-105 hover:-rotate-1 transition-all duration-300 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                     <h3 className="font-semibold text-white-700 mb-2">Specialization</h3>
@@ -384,7 +379,7 @@ export default function Portfolio() {
                 <img
                   src="/rajnishpic2.jpg"
                   alt="Rajnish Verma in his studio"
-                  className="w-full h-auto object-cover transform hover:scale-110 transition-transform duration-1000"
+                  className="w-full h-190 object-cover transform hover:scale-110 transition-transform duration-1000"
                 />
               </div>
               <div className="absolute -top-4 -right-4 w-24 sm:w-32 h-16 sm:h-20 bg-black/40 rounded-lg shadow-2xl overflow-hidden border border-white/20 transform hover:scale-110 hover:rotate-3 transition-all duration-500">
@@ -827,9 +822,9 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="w-16 sm:w-20 h-16 sm:h-20 bg-indigo-100 rounded-full overflow-hidden">
+              <div className="w-36 sm:w-20 h-16 sm:h-20 bg-indigo-100 rounded-full overflow-hidden">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="/dp.jpg?height=100&width=90"
                   alt="Rajnish Verma"
                   className="w-full h-full object-cover"
                 />
