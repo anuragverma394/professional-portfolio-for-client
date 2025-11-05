@@ -173,10 +173,10 @@ export default function Portfolio() {
 
   const openSocialMedia = (platform: string) => {
     const urls = {
-      instagram: "https://instagram.com/rajnishverma_artist",
-      facebook: "https://facebook.com/rajnishverma.sculptor",
+      instagram: "https://www.instagram.com/rajnish7570/",
+      facebook: "https://www.facebook.com/rajnish.verma.312538/",
       twitter: "https://twitter.com/rajnishverma_art",
-      linkedin: "https://linkedin.com/in/rajnishverma-sculptor",
+      linkedin: "https://www.linkedin.com/in/rajnish-verma-510788146/",
     }
     window.open(urls[platform as keyof typeof urls], "_blank")
   }
@@ -185,7 +185,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-br from-white-100 via-white-300 to-white-100 text-white overflow-x-hidden">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white shadow-2xl transform-gpu">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-          <h1 className="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-black hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
+          <h1 className="text-sm sm:text-lg md:text-xl  sm:w-1/2 font-bold tracking-tight text-black hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
             <span className="hidden sm:inline">Artist & Co-Founder of Beyond Boundaries Art Studio</span>
             {/* <span className="sm:hidden"> RajnishVerma</span> */}
           </h1>
@@ -435,7 +435,7 @@ export default function Portfolio() {
                 year: "2020",
                 title: "Excellence Prize",
                 location: "26th Harbin International Snow Sculpture Competition, Harbin, China",
-                image: "/placeholder-7aw3k.png",
+                image: "/prize2020.jpg",
                 description:
                   "Awarded for artistic mastery in one of the most prestigious snow sculpture competitions globally.",
               },
@@ -450,14 +450,14 @@ export default function Portfolio() {
                 year: "2019",
                 title: "First Prize",
                 location: "19th International Snow Sculpting Competition Japan Cup, Japan",
-                image: "/placeholder-gycgn.png",
+                image: "/firstprize.jpg",
                 description: "Achieved the highest recognition at Japan's premier snow sculpting championship.",
               },
               {
                 year: "2019",
                 title: "Special Prize",
                 location: "24th Harbin International Snow Sculpture Competition, Harbin, China",
-                image: "/placeholder-hkvow.png",
+                image: "/2019prize.jpg",
                 description: "Awarded for creative originality and artistic impact in snow sculpture.",
               },
               {
@@ -471,7 +471,7 @@ export default function Portfolio() {
                 year: "2019",
                 title: "Excellence Prize",
                 location: "8th China Harbin International Ice-Assemblage Sculpture Championship, Harbin, China",
-                image: "/placeholder-nxgb7.png",
+                image: "/2019prize.jpg",
                 description: "Awarded for excellence in collaborative large-scale ice sculpture.",
               },
             ].map((award, index) => (
@@ -770,7 +770,7 @@ export default function Portfolio() {
               size="lg"
               className="border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg bg-transparent"
             >
-              <a href="mailto:rajnish@example.com" className="flex items-center gap-2">
+              <a href="mailto:sculptorrajnish@gmail.com" className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
                 Email Me
               </a>
