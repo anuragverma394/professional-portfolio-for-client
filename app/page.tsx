@@ -503,116 +503,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-      <section
-        id="awards"
-        className="py-24 px-6 bg-gradient-to-br from-white-200 via-indigo-400 to-purple-300 relative overflow-hidden "
-        style={{ transformStyle: "preserve-3d" }}
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.3),transparent_80%)]"></div>
-
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
-            <div className="w-24 sm:w-32 h-24 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl transform hover:rotate-12 transition-all duration-500 border-2 border-cyan-400">
-              <img
-                src="/placeholder.svg?height=96&width=96"
-                alt="Awards"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-
-            <h2
-              className="text-4xl md:text-5xl font-bold text-black text-balance"
-              style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5)" }}
-            >
-              Awards & Recognition
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              {
-                year: "2018",
-                title: "PrafullaDhanukar Art Foundation Delhi City Merit Certificate Award",
-                location: "Delhi",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2017",
-                title: "PrafullaDhanukar Art Foundation Delhi City Award",
-                location: "Delhi",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2017",
-                title: "Young Artist Scholarship Award",
-                organization: "Ministry of Culture, Government of India",
-                location: "Delhi",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2017",
-                title: "83rd All India Exhibition of Arts",
-                location: "Amritsar, Punjab",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2017",
-                title: "27 Art Point, All India 3rd Online Art Competition",
-                location: "Jodhpur",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2016",
-                title: "Appreciating Your Art Award",
-                organization: "Allahabad University",
-                location: "Allahabad, UP",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-            ].map((award, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-black/20 backdrop-blur-xl border border-white/20 relative overflow-hidden rounded-xl 
-                     shadow-2xl transform transition-all duration-700 
-                     hover:rotate-y-12 hover:-rotate-x-6 hover:scale-110 
-                     hover:shadow-cyan-500/15"
-                style={{
-                  transformStyle: "preserve-3d",
-                  transform: `perspective(1000px)`,
-                  boxShadow: "0 0 40px rgba(99, 102, 241, 0.2)",
-                }}
-              >
-                <div className="w-full h-36 mb-4 rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-110 border border-white/10">
-                  <img
-                    src={award.image || "/placeholder.svg"}
-                    alt={award.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex items-start gap-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-cyan-500/20 text-cyan-300 border-cyan-400/30 shadow-lg backdrop-blur-sm"
-                  >
-                    {award.year}
-                  </Badge>
-                  <div className="flex-1">
-                    <h3 className="font-semibold mb-2 leading-tight text-white hover:text-cyan-300 transition-colors">
-                      {award.title}
-                    </h3>
-                    {award.organization && <p className="text-sm text-white/70 mb-1">{award.organization}</p>}
-                    <p className="text-sm text-white/50 flex items-center gap-1">
-                      <MapPin className="h-3 w-3 text-cyan-400" />
-                      {award.location}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section
         id="gallery"
         className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-slate-50 via-white-900 to-indigo-50 relative overflow-hidden"
@@ -680,6 +570,190 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+       <section
+        id="gallery"
+        className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-slate-50 via-white-900 to-indigo-50 relative overflow-hidden"
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">Commissions Work</h2>
+            {/* <p className="mt-4 text-base sm:text-lg text-slate-600">
+              A curated selection of my sculptures, blending traditional and contemporary forms.
+            </p> */}
+          </div>
+
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 space-y-3 sm:space-y-4">
+            {[
+              { src: "/comisiionwork/cow.jpeg", alt: "Cement work" },
+              
+              { src: "/comisiionwork/silicon.jpeg", alt: "Silicon Work" },
+
+              { src: "/comisiionwork/ele.jpeg", alt: "FiberGlass work" },
+              
+              { src: "/comisiionwork/elep.jpeg", alt: "FiberGlass work" },
+              { src: "/comisiionwork/baba.png", alt: "Cement work" },
+              
+              { src: "/comisiionwork/girl.jpeg", alt: "FiberGlass work" },
+              { src: "/comisiionwork/hut.jpeg", alt: "ScrapeMetal" },
+             { src: "/comisiionwork/ram.jpeg", alt: "FiberGlass work" },
+              
+              { src: "/comisiionwork/hutw.jpeg", alt: "ScrapeMetal" },
+              { src: "/comisiionwork/lion.jpeg", alt: "FiberGlass work" },
+            { src: "/comisiionwork/rammandir.jpeg", alt: "ScrapeMetal" },
+            
+               { src: "/comisiionwork/rath.jpeg", alt: "Minimalist Sculpture" },
+             
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="relative group overflow-hidden rounded-xl shadow-lg border border-slate-200 break-inside-avoid cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                onClick={() => setSelectedImage(item.src)}
+              >
+                <img
+                  src={item.src || "/placeholder.svg"}
+                  alt={item.alt}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                  <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="w-12 h-12 mx-auto mb-3 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                        />
+                      </svg>
+                    </div>
+                    <p className="text-sm sm:text-lg font-semibold mb-2">{item.alt}</p>
+                    <p className="text-xs sm:text-sm opacity-90 bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                      Click to enlarge
+                    </p>
+                  </div>
+                </div>
+                <div className="absolute top-3 right-3 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                    />
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section
+        id="awards"
+        className="py-24 px-6 bg-gradient-to-br from-white-200 via-indigo-400 to-purple-300 relative overflow-hidden "
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.3),transparent_80%)]"></div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
+            <div className="w-24 sm:w-32 h-24 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl transform hover:rotate-12 transition-all duration-500 border-2 border-cyan-400">
+              <img
+                src="/placeholder.svg?height=96&width=96"
+                alt="Awards"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+
+            <h2
+              className="text-4xl md:text-5xl font-bold text-black text-balance"
+              style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5)" }}
+            >
+              Media Coverage
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              // {
+              //   year: "2018",
+              //   title: "PrafullaDhanukar Art Foundation Delhi City Merit Certificate Award",
+              //   location: "Delhi",
+              //   image: "/placeholder.svg?height=200&width=300",
+              // },
+              // {
+              //   year: "2017",
+              //   title: "PrafullaDhanukar Art Foundation Delhi City Award",
+              //   location: "Delhi",
+              //   image: "/placeholder.svg?height=200&width=300",
+              // },
+              {
+              
+                image: "/placeholder.svg?height=200&width=300",
+              },
+              {
+                year: "2017",
+                title: "83rd All India Exhibition of Arts",
+                location: "Amritsar, Punjab",
+                image: "/placeholder.svg?height=200&width=300",
+              },
+              {
+                year: "2017",
+                title: "27 Art Point, All India 3rd Online Art Competition",
+                location: "Jodhpur",
+                image: "/placeholder.svg?height=200&width=300",
+              },
+              {
+                year: "2016",
+                title: "Appreciating Your Art Award",
+                organization: "Allahabad University",
+                location: "Allahabad, UP",
+                image: "/placeholder.svg?height=200&width=300",
+              },
+            ].map((award, index) => (
+              <Card
+                key={index}
+                className="p-6 bg-black/20 backdrop-blur-xl border border-white/20 relative overflow-hidden rounded-xl 
+                     shadow-2xl transform transition-all duration-700 
+                     hover:rotate-y-12 hover:-rotate-x-6 hover:scale-110 
+                     hover:shadow-cyan-500/15"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: `perspective(1000px)`,
+                  boxShadow: "0 0 40px rgba(99, 102, 241, 0.2)",
+                }}
+              >
+                <div className="w-full h-36 mb-4 rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-110 border border-white/10">
+                  <img
+                    src={award.image || "/placeholder.svg"}
+                    alt={award.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex items-start gap-4">
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/20 text-cyan-300 border-cyan-400/30 shadow-lg backdrop-blur-sm"
+                  >
+                    {award.year}
+                  </Badge>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2 leading-tight text-white hover:text-cyan-300 transition-colors">
+                      {award.title}
+                    </h3>
+                    {award.organization && <p className="text-sm text-white/70 mb-1">{award.organization}</p>}
+                    <p className="text-sm text-white/50 flex items-center gap-1">
+                      <MapPin className="h-3 w-3 text-cyan-400" />
+                      {award.location}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {selectedImage && (
         <div
