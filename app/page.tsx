@@ -311,7 +311,7 @@ export default function Portfolio() {
           </p>
           <Button
             size="lg"
-            onClick={() => scrollToSection("about")}
+            onClick={() => scrollToSection("awards")}
             className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 border-0"
             style={{ boxShadow: "0 0 40px rgba(99, 102, 241, 0.4)" }}
           >
@@ -708,7 +708,7 @@ He has represented India at multiple global art events, bringing contemporary In
               { src: "/comisiionwork/lion.jpeg", alt: "FiberGlass work" },
             { src: "/comisiionwork/rammandir.jpeg", alt: "ScrapeMetal" },
             
-               { src: "/comisiionwork/rath.jpeg", alt: "Minimalist Sculpture" },
+              //  { src: "/comisiionwork/rath.jpeg", alt: "Minimalist Sculpture" },
              
             ].map((item, index) => (
               <div
@@ -767,7 +767,7 @@ He has represented India at multiple global art events, bringing contemporary In
     <div className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
       <div className="w-24 sm:w-32 h-24 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl border-2 border-cyan-400">
         <img
-          src="/image.jpeg"
+          src="/news.jpg"
           alt="Media Coverage"
           className="w-full h-full object-cover rounded-full"
         />
@@ -893,7 +893,7 @@ He has represented India at multiple global art events, bringing contemporary In
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            <Card className="p-4 sm:p-6 text-center bg-white border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
+            {/* <Card className="p-4 sm:p-6 text-center bg-white border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 bg-indigo-100 rounded-full overflow-hidden">
                 <img
                   src="/placeholder.svg?height=64&width=64"
@@ -921,7 +921,7 @@ He has represented India at multiple global art events, bringing contemporary In
               </div>
               <h3 className="font-semibold mb-2 text-slate-900">Workshops</h3>
               <p className="text-sm text-slate-500">Sculpture techniques</p>
-            </Card>
+            </Card> */}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
