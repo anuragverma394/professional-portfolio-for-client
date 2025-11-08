@@ -394,6 +394,108 @@ He has represented India at multiple global art events, bringing contemporary In
           </div>
         </div>
       </section>
+      <section
+  id="awards"
+  className="py-11 px-5 bg-gradient-to-br from-orange-600 via-white-900 to-green-300 relative overflow-hidden"
+  style={{ transformStyle: "preserve-3d" }}
+>
+  {/* Background overlay */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.3),transparent_80%)]"></div>
+
+  <div className="container mx-auto max-w-8xl relative z-10">
+    {/* Section Heading */}
+    <div className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
+      {/* <div className="w-24 sm:w-32 h-24 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl border-2 border-cyan-400">
+        <img
+          src="/image.jpeg"
+          alt="Media Coverage"
+          className="w-full h-full object-cover rounded-full"
+        />
+      </div> */}
+
+      <h2
+        className="text-2xl md:text-5xl font-bold text-black text-balance"
+        style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5)" }}
+      >
+        
+      </h2>
+    </div>
+
+    {/* Moving Image Strip */}
+    <div className="relative overflow-hidden rounded-xl border border-white/30 shadow-2xl backdrop-blur-xl p-4">
+      <div className="flex gap-6 animate-scroll-slow">
+        {[
+          
+          "/celi2.jpeg",
+          "/celi3.jpeg",  
+          "/celi4.jpeg",
+          "/celi5.jpeg",
+          "/celi6.jpeg",
+          "/celi7.jpeg", 
+          "/celi8.jpeg",
+      
+        
+          ].map((src, index) => (
+          <div
+            key={index}
+            className="w-70 h-52 flex-shrink-0 rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-500 border border-white/10 shadow-lg"
+          >
+            <img
+              src={src}
+              alt={`Media coverage ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+
+       
+        {[
+            "/celi2.jpeg",
+          "/celi3.jpeg",  
+          "/celi4.jpeg",
+          "/celi5.jpeg",
+          "/celi6.jpeg",
+          "/celi7.jpeg", 
+          "/celi8.jpeg",
+      
+        ].map((src, index) => (
+          <div
+            key={`dup-${index}`}
+            className="w-70 h-52 flex-shrink-0 rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-500 border border-white/10 shadow-lg"
+          >
+            <img
+              src={src}
+              alt={`Media coverage duplicate ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* Animation keyframes */}
+  <style jsx>{`
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll-slow {
+      display: flex;
+      width: max-content;
+      animation: scroll 10s linear infinite;
+    }
+
+    .animate-scroll-slow:hover {
+      animation-play-state: paused; /* optional hover pause */
+    }
+  `}</style>
+</section>
 
       <section
         id="international-awards"
