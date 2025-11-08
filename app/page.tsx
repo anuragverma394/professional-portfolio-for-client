@@ -345,13 +345,18 @@ export default function Portfolio() {
               </h2>
               <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-black/80">
                 <p className="transform hover:translate-x-2 transition-all duration-300">
-                  Rajnish Verma is an accomplished sculptor with a Master of Fine Arts degree from the prestigious Jamia
-                  Millia Islamia, New Delhi, and a Bachelor of Fine Arts from Allahabad University.
+                 Rajnish Verma is an accomplished sculptor and fine artist, known for his ability to blend traditional sculptural techniques with contemporary artistic vision.
+He holds a Master of Fine Arts (M.F.A) in Sculpture from Jamia Millia Islamia, New Delhi, and a Bachelor of Fine Arts (B.F.A) from Allahabad University.
+
+Over the years, Rajnish has created an extensive body of work that explores form, material, and emotion through diverse mediums — including metal, clay, fiberglass, silicon, and mixed media. His sculptures often reflect a deep connection with organic forms, rhythm, and human expression, pushing the boundaries between realism and abstraction.
+
+As the Co-Founder of Beyond Boundaries Art Studio, Rajnish has been instrumental in fostering a creative environment that encourages experimentation, collaboration, and innovation. His studio practice embodies a philosophy of art without limits, inviting audiences to experience sculpture not just as form, but as living dialogue.
                 </p>
                 <p className="transform hover:translate-x-2 transition-all duration-300">
-                  His artistic journey spans over a decade, marked by numerous awards and exhibitions across India. His
-                  work explores the intersection of traditional sculptural techniques with contemporary artistic
-                  expression.
+                  🏆 Exhibitions & Recognition
+
+Rajnish’s work has been showcased in numerous national and international exhibitions, earning him several prestigious awards for excellence in both snow and ice sculpting competitions across the world — including China, Japan, and the USA.
+He has represented India at multiple global art events, bringing contemporary Indian sculpture to an international audience.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
                   <div className="transform hover:scale-90 hover:rotate-1  p-4 bg-white/5 rounded-lg ">
@@ -648,111 +653,101 @@ export default function Portfolio() {
         </div>
       </section>
       <section
-        id="awards"
-        className="py-24 px-6 bg-gradient-to-br from-white-200 via-indigo-400 to-purple-300 relative overflow-hidden "
-        style={{ transformStyle: "preserve-3d" }}
+  id="awards"
+  className="py-24 px-6 bg-gradient-to-br from-white-200 via-indigo-400 to-purple-300 relative overflow-hidden"
+  style={{ transformStyle: "preserve-3d" }}
+>
+  {/* Background overlay */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.3),transparent_80%)]"></div>
+
+  <div className="container mx-auto max-w-6xl relative z-10">
+    {/* Section Heading */}
+    <div className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
+      <div className="w-24 sm:w-32 h-24 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl border-2 border-cyan-400">
+        <img
+          src="/image.jpeg"
+          alt="Media Coverage"
+          className="w-full h-full object-cover rounded-full"
+        />
+      </div>
+
+      <h2
+        className="text-4xl md:text-5xl font-bold text-black text-balance"
+        style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5)" }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.3),transparent_80%)]"></div>
+        Media Coverage
+      </h2>
+    </div>
 
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
-            <div className="w-24 sm:w-32 h-24 sm:h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl transform hover:rotate-12 transition-all duration-500 border-2 border-cyan-400">
-              <img
-                src="/placeholder.svg?height=96&width=96"
-                alt="Awards"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-
-            <h2
-              className="text-4xl md:text-5xl font-bold text-black text-balance"
-              style={{ textShadow: "0 0 30px rgba(99, 102, 241, 0.5)" }}
-            >
-              Media Coverage
-            </h2>
+    {/* Moving Image Strip */}
+    <div className="relative overflow-hidden rounded-xl border border-white/30 shadow-2xl backdrop-blur-xl p-4">
+      <div className="flex gap-6 animate-scroll-slow">
+        {[
+          "/comisiionwork/media1.jpeg",
+        "/comisiionwork/media2.jpeg",
+          "/comisiionwork/media3.jpeg",
+          "/comisiionwork/media4.jpeg",
+          "/comisiionwork/media5.jpeg",
+        
+          ].map((src, index) => (
+          <div
+            key={index}
+            className="w-100 h-82 flex-shrink-0 rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-500 border border-white/10 shadow-lg"
+          >
+            <img
+              src={src}
+              alt={`Media coverage ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
           </div>
+        ))}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              // {
-              //   year: "2018",
-              //   title: "PrafullaDhanukar Art Foundation Delhi City Merit Certificate Award",
-              //   location: "Delhi",
-              //   image: "/placeholder.svg?height=200&width=300",
-              // },
-              // {
-              //   year: "2017",
-              //   title: "PrafullaDhanukar Art Foundation Delhi City Award",
-              //   location: "Delhi",
-              //   image: "/placeholder.svg?height=200&width=300",
-              // },
-              {
-              
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2017",
-                title: "83rd All India Exhibition of Arts",
-                location: "Amritsar, Punjab",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2017",
-                title: "27 Art Point, All India 3rd Online Art Competition",
-                location: "Jodhpur",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-              {
-                year: "2016",
-                title: "Appreciating Your Art Award",
-                organization: "Allahabad University",
-                location: "Allahabad, UP",
-                image: "/placeholder.svg?height=200&width=300",
-              },
-            ].map((award, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-black/20 backdrop-blur-xl border border-white/20 relative overflow-hidden rounded-xl 
-                     shadow-2xl transform transition-all duration-700 
-                     hover:rotate-y-12 hover:-rotate-x-6 hover:scale-110 
-                     hover:shadow-cyan-500/15"
-                style={{
-                  transformStyle: "preserve-3d",
-                  transform: `perspective(1000px)`,
-                  boxShadow: "0 0 40px rgba(99, 102, 241, 0.2)",
-                }}
-              >
-                <div className="w-full h-36 mb-4 rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-110 border border-white/10">
-                  <img
-                    src={award.image || "/placeholder.svg"}
-                    alt={award.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex items-start gap-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-cyan-500/20 text-cyan-300 border-cyan-400/30 shadow-lg backdrop-blur-sm"
-                  >
-                    {award.year}
-                  </Badge>
-                  <div className="flex-1">
-                    <h3 className="font-semibold mb-2 leading-tight text-white hover:text-cyan-300 transition-colors">
-                      {award.title}
-                    </h3>
-                    {award.organization && <p className="text-sm text-white/70 mb-1">{award.organization}</p>}
-                    <p className="text-sm text-white/50 flex items-center gap-1">
-                      <MapPin className="h-3 w-3 text-cyan-400" />
-                      {award.location}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+       
+        {[
+           "/comisiionwork/media1.jpeg",
+        "/comisiionwork/media2.jpeg",
+          "/comisiionwork/media3.jpeg",
+          "/comisiionwork/media4.jpeg",
+          "/comisiionwork/media5.jpeg",
+        
+        ].map((src, index) => (
+          <div
+            key={`dup-${index}`}
+            className="w-100 h-82 flex-shrink-0 rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-500 border border-white/10 shadow-lg"
+          >
+            <img
+              src={src}
+              alt={`Media coverage duplicate ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
 
+  {/* Animation keyframes */}
+  <style jsx>{`
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll-slow {
+      display: flex;
+      width: max-content;
+      animation: scroll 10s linear infinite;
+    }
+
+    .animate-scroll-slow:hover {
+      animation-play-state: paused; /* optional hover pause */
+    }
+  `}</style>
+</section>
 
 
       {selectedImage && (
